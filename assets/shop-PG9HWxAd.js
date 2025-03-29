@@ -1,4 +1,4 @@
-import{w as f,u as h}from"./CartContext-C1fD52WZ.js";import{r as g,l as t,L as x}from"./chunk-XJI4KG32-CWcXHV3D.js";import{n as o,m as i,c as u,d as b}from"./index-Dq6RcAo_.js";import{p as n}from"./products-COYa-fSL.js";const w=o.div`
+import{w as f,u as h}from"./CartContext-C1fD52WZ.js";import{r as g,l as t,L as x}from"./chunk-XJI4KG32-CWcXHV3D.js";import{n as o,m as i,c as u,d as b}from"./index-DeAzHsZe.js";import{p as n}from"./products-COYa-fSL.js";const w=o.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
