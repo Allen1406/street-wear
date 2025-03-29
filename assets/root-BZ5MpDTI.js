@@ -139,8 +139,9 @@ import{u as m,w as u,C as f}from"./CartContext-C1fD52WZ.js";import{L as l,r as a
   @media (max-width: 768px) {
     display: block;
     position: absolute;
-    right: 4rem;
-    top: 1rem;
+    right: 4.5rem;
+    top: 50%;
+    transform: translateY(-50%);
   }
 `,A=t(p.div)`
   position: fixed;
