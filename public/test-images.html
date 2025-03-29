@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .image-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            background-color: #f0f0f0;
+            position: relative;
+        }
+        .image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .image-info {
+            padding: 15px;
+        }
+        .image-info h3 {
+            margin-top: 0;
+        }
+        .path-info {
+            font-size: 12px;
+            color: #666;
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body>
+    <h1>Product Image Test</h1>
+    
+    <div class="image-grid">
+        <div class="image-card">
+            <div class="image">
+                <img src="/images/product1.jpg" alt="Product 1" 
+                     onerror="this.onerror=null; this.style.display='none'; this.parentNode.innerHTML += '<div style=\'position:absolute; top:0; left:0; right:0; bottom:0; display:flex; align-items:center; justify-content:center; background:#111; color:white;\'>Image failed to load</div>'">
+            </div>
+            <div class="image-info">
+                <h3>Black Hoodie</h3>
+                <p class="path-info">Path: /images/product1.jpg</p>
+            </div>
+        </div>
+        
+        <div class="image-card">
+            <div class="image">
+                <img src="/images/product2.jpg" alt="Product 2"
+                     onerror="this.onerror=null; this.style.display='none'; this.parentNode.innerHTML += '<div style=\'position:absolute; top:0; left:0; right:0; bottom:0; display:flex; align-items:center; justify-content:center; background:#000080; color:white;\'>Image failed to load</div>'">
+            </div>
+            <div class="image-info">
+                <h3>Navy Track Jacket</h3>
+                <p class="path-info">Path: /images/product2.jpg</p>
+            </div>
+        </div>
+        
+        <div class="image-card">
+            <div class="image">
+                <img src="/images/product3.jpg" alt="Product 3"
+                     onerror="this.onerror=null; this.style.display='none'; this.parentNode.innerHTML += '<div style=\'position:absolute; top:0; left:0; right:0; bottom:0; display:flex; align-items:center; justify-content:center; background:#222; color:white;\'>Image failed to load</div>'">
+            </div>
+            <div class="image-info">
+                <h3>Black Track Jacket</h3>
+                <p class="path-info">Path: /images/product3.jpg</p>
+            </div>
+        </div>
+        
+        <div class="image-card">
+            <div class="image">
+                <img src="/images/product4.jpg" alt="Product 4"
+                     onerror="this.onerror=null; this.style.display='none'; this.parentNode.innerHTML += '<div style=\'position:absolute; top:0; left:0; right:0; bottom:0; display:flex; align-items:center; justify-content:center; background:#333; color:white;\'>Image failed to load</div>'">
+            </div>
+            <div class="image-info">
+                <h3>Graphic T-Shirt</h3>
+                <p class="path-info">Path: /images/product4.jpg</p>
+            </div>
+        </div>
+        
+        <div class="image-card">
+            <div class="image">
+                <img src="/images/product5.jpg" alt="Product 5"
+                     onerror="this.onerror=null; this.style.display='none'; this.parentNode.innerHTML += '<div style=\'position:absolute; top:0; left:0; right:0; bottom:0; display:flex; align-items:center; justify-content:center; background:#000080; color:white;\'>Image failed to load</div>'">
+            </div>
+            <div class="image-info">
+                <h3>Navy Track Pants</h3>
+                <p class="path-info">Path: /images/product5.jpg</p>
+            </div>
+        </div>
+        
+        <div class="image-card">
+            <div class="image">
+                <img src="/images/product6.jpg" alt="Product 6"
+                     onerror="this.onerror=null; this.style.display='none'; this.parentNode.innerHTML += '<div style=\'position:absolute; top:0; left:0; right:0; bottom:0; display:flex; align-items:center; justify-content:center; background:#222; color:white;\'>Image failed to load</div>'">
+            </div>
+            <div class="image-info">
+                <h3>Black Track Pants</h3>
+                <p class="path-info">Path: /images/product6.jpg</p>
+            </div>
+        </div>
+        
+        <div class="image-card">
+            <div class="image">
+                <img src="/images/hero.jpg" alt="Hero Image"
+                     onerror="this.onerror=null; this.style.display='none'; this.parentNode.innerHTML += '<div style=\'position:absolute; top:0; left:0; right:0; bottom:0; display:flex; align-items:center; justify-content:center; background:#555; color:white;\'>Image failed to load</div>'">
+            </div>
+            <div class="image-info">
+                <h3>Hero Image</h3>
+                <p class="path-info">Path: /images/hero.jpg</p>
+            </div>
+        </div>
+        
+        <!-- Also test the app/images path -->
+        <div class="image-card">
+            <div class="image">
+                <img src="/app/images/product1.jpg" alt="Product 1 (App path)"
+                     onerror="this.onerror=null; this.style.display='none'; this.parentNode.innerHTML += '<div style=\'position:absolute; top:0; left:0; right:0; bottom:0; display:flex; align-items:center; justify-content:center; background:#111; color:white;\'>Image failed to load</div>'">
+            </div>
+            <div class="image-info">
+                <h3>Black Hoodie (App path)</h3>
+                <p class="path-info">Path: /app/images/product1.jpg</p>
+            </div>
+        </div>
+    </div>
+    
+    <div style="margin-top: 30px; text-align: center;">
+        <a href="/" style="display: inline-block; padding: 10px 20px; background: #000; color: #fff; text-decoration: none; border-radius: 5px;">Back to Home</a>
+    </div>
+    
+    <script>
+        // Log any loaded images to console
+        document.querySelectorAll('img').forEach(img => {
+            img.onload = function() {
+                console.log(`Successfully loaded: ${this.src}`);
+            };
+        });
+    </script>
+</body>
+</html> 
