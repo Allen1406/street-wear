@@ -32,7 +32,8 @@ const Homepage: React.FC = () => {
         borderRadius: '10px',
         marginBottom: '40px',
         position: 'relative',
-        overflow: 'hidden'
+        overflow: 'hidden',
+        padding: '20px'
       }}>
         <div style={{
           position: 'absolute',
@@ -54,38 +55,43 @@ const Homepage: React.FC = () => {
           borderRadius: '10px',
           zIndex: 1,
           maxWidth: '600px',
+          width: '90%',
+          margin: '0 auto',
           border: '1px solid rgba(255,255,255,0.1)'
         }}>
           <div style={{ 
-            fontSize: '3rem', 
+            fontSize: 'clamp(2rem, 5vw, 3rem)', 
             fontWeight: 'bold', 
             marginBottom: '10px', 
             color: 'white',
             textTransform: 'uppercase',
-            letterSpacing: '3px'
+            letterSpacing: '3px',
+            lineHeight: 1.1
           }}>
             STREETWEAR
           </div>
           <h1 style={{ 
-            fontSize: '2.2rem', 
+            fontSize: 'clamp(1.5rem, 4vw, 2.2rem)', 
             marginBottom: '15px', 
             color: 'white',
-            fontWeight: '300'
+            fontWeight: '300',
+            lineHeight: 1.2
           }}>
             Premium Performance Wear
           </h1>
           <p style={{ 
-            fontSize: '1.2rem', 
+            fontSize: 'clamp(0.9rem, 3vw, 1.2rem)', 
             marginBottom: '25px', 
             color: '#ccc',
-            maxWidth: '80%',
-            margin: '0 auto 25px auto'
+            maxWidth: '90%',
+            margin: '0 auto 25px auto',
+            lineHeight: 1.4
           }}>
             Elevate your training with our signature track jackets and pants collection
           </p>
           <Link to="/shop" style={{
             display: 'inline-block',
-            padding: '12px 30px',
+            padding: 'clamp(8px, 2vw, 12px) clamp(15px, 4vw, 30px)',
             background: 'white',
             color: 'black',
             textDecoration: 'none',
@@ -93,7 +99,8 @@ const Homepage: React.FC = () => {
             fontWeight: 'bold',
             textTransform: 'uppercase',
             letterSpacing: '1px',
-            transition: 'all 0.3s ease'
+            transition: 'all 0.3s ease',
+            fontSize: 'clamp(0.8rem, 2vw, 1rem)'
           }}>
             Shop Now
           </Link>
@@ -101,7 +108,7 @@ const Homepage: React.FC = () => {
       </div>
       
       {/* Products Section */}
-      <h2 style={{ textAlign: 'center', fontSize: '2rem', marginBottom: '30px' }}>
+      <h2 style={{ textAlign: 'center', fontSize: 'clamp(1.5rem, 4vw, 2rem)', marginBottom: '30px' }}>
         Featured Products
       </h2>
       
@@ -111,8 +118,9 @@ const Homepage: React.FC = () => {
       
       <div style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
-        gap: '20px'
+        gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))',
+        gap: '20px',
+        padding: '0 10px'
       }}>
         {Array.isArray(products) && products.slice(0, 6).map(product => (
           <div key={product.id} style={{
@@ -120,9 +128,12 @@ const Homepage: React.FC = () => {
             borderRadius: '10px',
             overflow: 'hidden',
             background: '#fff',
-            boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)'
+            boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)',
+            height: '100%',
+            display: 'flex',
+            flexDirection: 'column'
           }}>
-            <div style={{ position: 'relative', height: '300px' }}>
+            <div style={{ position: 'relative', height: '280px' }}>
               <img
                 src={product.image}
                 alt={product.name}
@@ -166,11 +177,11 @@ const Homepage: React.FC = () => {
               </div>
             </div>
             
-            <div style={{ padding: '15px' }}>
-              <h3 style={{ marginBottom: '5px' }}>{product.name}</h3>
+            <div style={{ padding: '15px', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
+              <h3 style={{ marginBottom: '5px', fontSize: 'clamp(1rem, 3vw, 1.2rem)' }}>{product.name}</h3>
               <p style={{ color: '#666', marginBottom: '15px' }}>${product.price.toFixed(2)}</p>
               
-              <div style={{ display: 'flex', gap: '10px' }}>
+              <div style={{ display: 'flex', gap: '10px', marginTop: 'auto' }}>
                 <Link to={`/product/${product.id}`} style={{
                   flex: 1,
                   padding: '8px',
@@ -178,7 +189,8 @@ const Homepage: React.FC = () => {
                   color: '#333',
                   textAlign: 'center',
                   textDecoration: 'none',
-                  borderRadius: '5px'
+                  borderRadius: '5px',
+                  fontSize: 'clamp(0.8rem, 2vw, 0.9rem)'
                 }}>
                   View Details
                 </Link>
@@ -193,7 +205,8 @@ const Homepage: React.FC = () => {
                   border: 'none',
                   borderRadius: '5px',
                   cursor: 'pointer',
-                  transition: 'background-color 0.3s ease'
+                  transition: 'background-color 0.3s ease',
+                  fontSize: 'clamp(0.8rem, 2vw, 0.9rem)'
                 }}>
                   {addedToCart[product.id] ? 'Added! ✓' : 'Add to Cart'}
                 </button>
@@ -213,14 +226,14 @@ const Homepage: React.FC = () => {
       {/* Simple Footer */}
       <div style={{
         marginTop: '50px',
-        padding: '40px 30px',
+        padding: '40px 20px',
         background: '#000',
         color: 'white',
         textAlign: 'center',
         borderRadius: '10px'
       }}>
         <div style={{ 
-          fontSize: '2rem', 
+          fontSize: 'clamp(1.5rem, 4vw, 2rem)', 
           fontWeight: 'bold', 
           marginBottom: '20px',
           letterSpacing: '2px'
@@ -230,17 +243,18 @@ const Homepage: React.FC = () => {
         <div style={{
           display: 'flex',
           justifyContent: 'center',
-          gap: '30px',
+          gap: 'clamp(15px, 4vw, 30px)',
           marginBottom: '30px',
-          flexWrap: 'wrap'
+          flexWrap: 'wrap',
+          padding: '0 10px'
         }}>
-          <div>Shop</div>
-          <div>About</div>
-          <div>Athletes</div>
-          <div>Careers</div>
-          <div>Support</div>
+          <div style={{ padding: '5px 0' }}>Shop</div>
+          <div style={{ padding: '5px 0' }}>About</div>
+          <div style={{ padding: '5px 0' }}>Athletes</div>
+          <div style={{ padding: '5px 0' }}>Careers</div>
+          <div style={{ padding: '5px 0' }}>Support</div>
         </div>
-        <p>© 2024 STREETWEAR. All rights reserved.</p>
+        <p style={{ fontSize: 'clamp(0.8rem, 2vw, 1rem)' }}>© 2024 STREETWEAR. All rights reserved.</p>
       </div>
     </div>
   );

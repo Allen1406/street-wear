@@ -13,6 +13,10 @@ const MainContainer = styled.div`
 const Content = styled.main`
   flex: 1;
   padding-top: 80px;
+  
+  @media (max-width: 768px) {
+    padding-top: 70px;
+  }
 `;
 
 export default function Root() {
